@@ -1,0 +1,28 @@
+{
+  "name": "Pyrimid Buyer-Agent Recommender",
+  "id": "REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent",
+  "version": "1.0.0",
+  "description": "No-custody buyer-agent recommender for Pyrimid x402 products on Base USDC.",
+  "homepage": "https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/",
+  "endpoints": {
+    "web": "https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/",
+    "catalog": "https://pyrimid.ai/api/v1/catalog"
+  },
+  "pyrimid": {
+    "sdk": "@pyrimid/sdk@0.2.6",
+    "integration_path": "embedded_resolver",
+    "affiliate_id": "REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent",
+    "catalog_url": "https://pyrimid.ai/api/v1/catalog",
+    "purchase_header": {
+      "X-Affiliate-ID": "REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent"
+    }
+  },
+  "wallets": {
+    "base_usdc": "REPLACE_WITH_BASE_USDC_WALLET"
+  },
+  "safety": {
+    "custody": "no private keys, seed phrases, wallet credentials, payment credentials, OAuth tokens, or API keys are requested or stored",
+    "spending": "recommendation and discovery only; buyer agents keep custody and pay from their own wallet runtime"
+  }
+}
+

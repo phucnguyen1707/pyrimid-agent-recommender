@@ -1,0 +1,11 @@
+{
+  "name": "pyrimid-agent-recommender",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-static.mjs",
+    "configure": "node scripts/configure.mjs"
+  }
+}
+

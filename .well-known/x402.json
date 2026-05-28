@@ -1,0 +1,20 @@
+{
+  "x402": "1",
+  "service": "Pyrimid Buyer-Agent Recommender",
+  "network": "base",
+  "asset": "USDC",
+  "mode": "discovery_only",
+  "payment": {
+    "accepts": [],
+    "note": "This recommender does not charge users or make payments. It recommends third-party Pyrimid products that may return HTTP 402 payment requirements."
+  },
+  "affiliate": {
+    "id": "REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent",
+    "payout_wallet": "REPLACE_WITH_BASE_USDC_WALLET",
+    "purchase_header": {
+      "X-Affiliate-ID": "REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent"
+    }
+  },
+  "catalog": "https://pyrimid.ai/api/v1/catalog"
+}
+

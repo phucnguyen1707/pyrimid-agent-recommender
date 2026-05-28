@@ -1,0 +1,26 @@
+# Pyrimid Buyer-Agent Recommender
+
+This is a no-custody buyer-agent recommender for Pyrimid x402 products on Base USDC.
+
+Important URLs:
+
+- Live app: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/
+- Agent metadata: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/.well-known/agent.json
+- x402 metadata: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/.well-known/x402.json
+- Pyrimid catalog: https://pyrimid.ai/api/v1/catalog
+
+Integration details:
+
+- Uses `@pyrimid/sdk@0.2.6`.
+- Imports `PyrimidResolver` from `https://esm.sh/@pyrimid/sdk@0.2.6/resolver?bundle`.
+- Recommends paid products from the live Pyrimid catalog.
+- Uses affiliate id `REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent`.
+- Sends buyers to products with `X-Affiliate-ID: REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent`.
+- Payout wallet for Base USDC is `REPLACE_WITH_BASE_USDC_WALLET`.
+
+Safety:
+
+- This service does not ask for private keys, seed phrases, OAuth tokens, API keys, wallet credentials, or payment credentials.
+- It does not sign transactions or make purchases.
+- Buyer agents keep wallet custody and pay from their own runtime if they choose to buy a recommended product.
+

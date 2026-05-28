@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pyrimid Buyer-Agent Recommender</title>
+    <meta
+      name="description"
+      content="Buyer-agent recommender for Pyrimid x402 products on Base USDC."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f7fb;
+        --panel: #ffffff;
+        --ink: #15171d;
+        --muted: #667085;
+        --line: #d8deea;
+        --accent: #0f766e;
+        --accent-2: #7c3aed;
+        --soft: #eef7f5;
+        --warn: #9a3412;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      main {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 32px 0;
+      }
+
+      header {
+        display: grid;
+        gap: 16px;
+        padding: 24px 0;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        font-size: clamp(2rem, 5vw, 4.5rem);
+        line-height: 1.02;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        font-size: 1rem;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.65;
+      }
+
+      .toolbar {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 10px;
+        align-items: center;
+        margin: 22px 0 26px;
+      }
+
+      input,
+      button {
+        min-height: 44px;
+        border-radius: 8px;
+        font: inherit;
+      }
+
+      input {
+        width: 100%;
+        border: 1px solid var(--line);
+        padding: 0 14px;
+        background: #fff;
+        color: var(--ink);
+      }
+
+      button {
+        border: 0;
+        padding: 0 16px;
+        background: var(--accent);
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      button.secondary {
+        background: #111827;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 0 24px;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--muted);
+        padding: 7px 11px;
+        font-size: 0.9rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .card {
+        min-height: 260px;
+        display: grid;
+        gap: 12px;
+        align-content: start;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 18px;
+      }
+
+      .card strong {
+        font-size: 1.02rem;
+      }
+
+      .card p,
+      .small {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        border-radius: 999px;
+        background: var(--soft);
+        color: var(--accent);
+        padding: 5px 8px;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .footer {
+        margin-top: 24px;
+        display: grid;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      code {
+        color: var(--warn);
+      }
+
+      @media (max-width: 820px) {
+        .toolbar,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="meta">
+          <span class="pill">Pyrimid SDK 0.2.6</span>
+          <span class="pill">Base USDC</span>
+          <span class="pill">x402 product discovery</span>
+        </div>
+        <h1>Pyrimid Buyer-Agent Recommender</h1>
+        <p class="lead">
+          A no-custody discovery agent that helps buyer agents find paid MCP,
+          AI, search, security, and trading products from the live Pyrimid
+          catalog.
+        </p>
+      </header>
+
+      <section class="toolbar" aria-label="Search controls">
+        <input
+          id="need"
+          value="paid mcp tool monetization x402 agent discovery"
+          aria-label="Buyer need"
+        />
+        <button id="search">Recommend</button>
+        <button id="sample" class="secondary">Sample</button>
+      </section>
+
+      <div class="meta" id="status">
+        <span class="pill">Loading live catalog...</span>
+      </div>
+
+      <section class="grid" id="results" aria-live="polite"></section>
+
+      <section class="footer">
+        <p>
+          Affiliate id:
+          <code id="affiliate">REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent</code>
+        </p>
+        <p>
+          Payout wallet:
+          <code id="wallet">REPLACE_WITH_BASE_USDC_WALLET</code>
+        </p>
+        <p>
+          Safety: this page only recommends products. It never requests wallet
+          secrets, signs transactions, stores payment credentials, or makes
+          purchases.
+        </p>
+      </section>
+    </main>
+
+    <script type="module">
+      import { PyrimidResolver } from "https://esm.sh/@pyrimid/sdk@0.2.6/resolver?bundle";
+
+      const CONFIG = {
+        service: "Pyrimid Buyer-Agent Recommender",
+        affiliateId: "REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent",
+        payoutWallet: "REPLACE_WITH_BASE_USDC_WALLET",
+        catalogUrl: "https://pyrimid.ai/api/v1/catalog",
+      };
+
+      const state = {
+        products: [],
+        resolverReady: false,
+      };
+
+      const els = {
+        need: document.querySelector("#need"),
+        status: document.querySelector("#status"),
+        results: document.querySelector("#results"),
+        search: document.querySelector("#search"),
+        sample: document.querySelector("#sample"),
+        affiliate: document.querySelector("#affiliate"),
+        wallet: document.querySelector("#wallet"),
+      };
+
+      els.affiliate.textContent = CONFIG.affiliateId;
+      els.wallet.textContent = CONFIG.payoutWallet;
+
+      function tokenize(value) {
+        return String(value || "")
+          .toLowerCase()
+          .split(/[^a-z0-9]+/)
+          .filter(Boolean);
+      }
+
+      function scoreProduct(product, need) {
+        const terms = tokenize(need);
+        const haystack = [
+          product.vendor_name,
+          product.product_id,
+          product.description,
+          product.category,
+          ...(product.tags || []),
+        ]
+          .join(" ")
+          .toLowerCase();
+
+        const hits = terms.filter((term) => haystack.includes(term)).length;
+        const sdkBoost = product.sdk_integrated ? 3 : 0;
+        const affiliateBoost = Number(product.affiliate_bps || 0) > 0 ? 2 : 0;
+        const paidBoost = Number(product.price_usdc || 0) > 0 ? 1 : 0;
+        return hits * 5 + sdkBoost + affiliateBoost + paidBoost;
+      }
+
+      function renderStatus(message) {
+        els.status.innerHTML = `<span class="pill">${message}</span>`;
+      }
+
+      function render(products, need) {
+        const ranked = products
+          .map((product) => ({ product, score: scoreProduct(product, need) }))
+          .sort((a, b) => b.score - a.score)
+          .slice(0, 6);
+
+        els.results.innerHTML = ranked
+          .map(({ product, score }) => {
+            const tags = (product.tags || []).slice(0, 4);
+            const price = product.price_display || "$0.00";
+            const affiliate = product.affiliate_bps
+              ? `${product.affiliate_bps / 100}% affiliate`
+              : "No affiliate";
+            return `
+              <article class="card">
+                <strong>${escapeHtml(product.vendor_name || product.vendor_id)}</strong>
+                <p>${escapeHtml(product.description || product.product_id)}</p>
+                <div class="row">
+                  <span class="tag">${escapeHtml(price)}</span>
+                  <span class="tag">${escapeHtml(affiliate)}</span>
+                  <span class="tag">score ${score}</span>
+                </div>
+                <p class="small">${escapeHtml(product.endpoint || "")}</p>
+                <div class="row">
+                  ${tags.map((tag) => `<span class="pill">${escapeHtml(tag)}</span>`).join("")}
+                </div>
+              </article>
+            `;
+          })
+          .join("");
+
+        renderStatus(
+          `${ranked.length} product matches from ${products.length} live catalog entries`
+        );
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;");
+      }
+
+      async function loadCatalog() {
+        try {
+          const resolver = new PyrimidResolver({
+            affiliateId: CONFIG.affiliateId,
+          });
+          state.resolverReady = Boolean(resolver);
+        } catch (error) {
+          state.resolverReady = false;
+        }
+
+        const response = await fetch(CONFIG.catalogUrl, {
+          headers: { accept: "application/json" },
+        });
+        if (!response.ok) {
+          throw new Error(`Catalog request failed: ${response.status}`);
+        }
+        const payload = await response.json();
+        state.products = Array.isArray(payload.products) ? payload.products : [];
+        render(state.products, els.need.value);
+      }
+
+      els.search.addEventListener("click", () => {
+        render(state.products, els.need.value);
+      });
+
+      els.sample.addEventListener("click", () => {
+        els.need.value = "security audit x402 paid api agent tooling";
+        render(state.products, els.need.value);
+      });
+
+      loadCatalog().catch((error) => {
+        renderStatus(`Catalog unavailable: ${error.message}`);
+      });
+    </script>
+  </body>
+</html>
+
