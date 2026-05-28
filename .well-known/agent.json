@@ -1,24 +1,24 @@
 {
   "name": "Pyrimid Buyer-Agent Recommender",
-  "id": "REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent",
+  "id": "phucnguyen1707-pyrimid-agent",
   "version": "1.0.0",
   "description": "No-custody buyer-agent recommender for Pyrimid x402 products on Base USDC.",
-  "homepage": "https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/",
+  "homepage": "https://phucnguyen1707.github.io/pyrimid-agent-recommender/",
   "endpoints": {
-    "web": "https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/",
+    "web": "https://phucnguyen1707.github.io/pyrimid-agent-recommender/",
     "catalog": "https://pyrimid.ai/api/v1/catalog"
   },
   "pyrimid": {
     "sdk": "@pyrimid/sdk@0.2.6",
     "integration_path": "embedded_resolver",
-    "affiliate_id": "REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent",
+    "affiliate_id": "phucnguyen1707-pyrimid-agent",
     "catalog_url": "https://pyrimid.ai/api/v1/catalog",
     "purchase_header": {
-      "X-Affiliate-ID": "REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent"
+      "X-Affiliate-ID": "phucnguyen1707-pyrimid-agent"
     }
   },
   "wallets": {
-    "base_usdc": "REPLACE_WITH_BASE_USDC_WALLET"
+    "base_usdc": "0xff82d9edf8b4b8de630ceceab4ba0be6165ab27c"
   },
   "safety": {
     "custody": "no private keys, seed phrases, wallet credentials, payment credentials, OAuth tokens, or API keys are requested or stored",

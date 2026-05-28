@@ -13,13 +13,13 @@ Static buyer-agent recommender for the MYA/Pyrimid job #20 submission track:
 - Does not request private keys, seed phrases, OAuth tokens, API keys, or payment credentials.
 - Does not sign transactions or send payments.
 
-## Configure Before Submission
+## Configured Submission
 
-Replace these placeholders in all files:
+This copy is configured for:
 
-- `REPLACE_WITH_GITHUB_USERNAME`
-- `REPLACE_WITH_REPO_NAME`
-- `REPLACE_WITH_BASE_USDC_WALLET`
+- `phucnguyen1707`
+- `pyrimid-agent-recommender`
+- `0xff82d9edf8b4b8de630ceceab4ba0be6165ab27c`
 
 The payout wallet must be a real EVM address on Base, for example a Coinbase Wallet, Rabby, MetaMask, or other wallet that can receive Base USDC.
 
@@ -29,7 +29,7 @@ The payout wallet must be a real EVM address on Base, for example a Coinbase Wal
 npm run check
 ```
 
-Expected result after replacing placeholders:
+Expected result:
 
 ```json
 {

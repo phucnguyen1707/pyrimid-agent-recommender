@@ -1,15 +1,14 @@
 # Fast Submit Checklist
 
-Use this only after you have:
+This copy is already configured with:
 
-- GitHub username
-- Public repo name
-- Base USDC/EVM wallet address
+- GitHub username: `phucnguyen1707`
+- Repo name: `pyrimid-agent-recommender`
+- Base USDC wallet: `0xff82d9edf8b4b8de630ceceab4ba0be6165ab27c`
 
-## 1. Configure Files
+## 1. Verify Files
 
 ```bash
-npm run configure -- --github YOUR_GITHUB_USERNAME --repo pyrimid-agent-recommender --wallet 0xYOUR_BASE_USDC_WALLET
 npm run check
 ```
 
@@ -30,14 +29,14 @@ Enable GitHub Pages:
 Wait until this URL works:
 
 ```text
-https://YOUR_GITHUB_USERNAME.github.io/pyrimid-agent-recommender/
+https://phucnguyen1707.github.io/pyrimid-agent-recommender/
 ```
 
 Also test:
 
 ```text
-https://YOUR_GITHUB_USERNAME.github.io/pyrimid-agent-recommender/.well-known/agent.json
-https://YOUR_GITHUB_USERNAME.github.io/pyrimid-agent-recommender/.well-known/x402.json
+https://phucnguyen1707.github.io/pyrimid-agent-recommender/.well-known/agent.json
+https://phucnguyen1707.github.io/pyrimid-agent-recommender/.well-known/x402.json
 ```
 
 ## 3. Submit

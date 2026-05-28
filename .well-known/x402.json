@@ -9,10 +9,10 @@
     "note": "This recommender does not charge users or make payments. It recommends third-party Pyrimid products that may return HTTP 402 payment requirements."
   },
   "affiliate": {
-    "id": "REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent",
-    "payout_wallet": "REPLACE_WITH_BASE_USDC_WALLET",
+    "id": "phucnguyen1707-pyrimid-agent",
+    "payout_wallet": "0xff82d9edf8b4b8de630ceceab4ba0be6165ab27c",
     "purchase_header": {
-      "X-Affiliate-ID": "REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent"
+      "X-Affiliate-ID": "phucnguyen1707-pyrimid-agent"
     }
   },
   "catalog": "https://pyrimid.ai/api/v1/catalog"

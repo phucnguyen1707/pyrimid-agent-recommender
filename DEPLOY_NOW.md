@@ -1,16 +1,16 @@
 # Deploy Now
 
-Current blocker:
+Ready values:
 
-- Need your GitHub username.
-- Need your Base USDC/EVM payout wallet.
+- GitHub username: `phucnguyen1707`
+- Repo name: `pyrimid-agent-recommender`
+- Base USDC wallet: `0xff82d9edf8b4b8de630ceceab4ba0be6165ab27c`
 
-## Step 1: Configure
+## Step 1: Verify
 
 Run from this folder:
 
 ```bash
-npm run configure -- --github YOUR_GITHUB_USERNAME --repo pyrimid-agent-recommender --wallet 0xYOUR_BASE_USDC_WALLET
 npm run check
 ```
 
@@ -45,25 +45,25 @@ Use this if you created the GitHub repo and have git credentials ready:
 ```bash
 git add .
 git commit -m "Configure Pyrimid recommender metadata"
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/pyrimid-agent-recommender.git
+git remote add origin https://github.com/phucnguyen1707/pyrimid-agent-recommender.git
 git push -u origin main
 ```
 
 If `git remote add` says the remote already exists:
 
 ```bash
-git remote set-url origin https://github.com/YOUR_GITHUB_USERNAME/pyrimid-agent-recommender.git
+git remote set-url origin https://github.com/phucnguyen1707/pyrimid-agent-recommender.git
 git push -u origin main
 ```
 
 ## Step 3: Test Live URLs
 
 ```text
-https://YOUR_GITHUB_USERNAME.github.io/pyrimid-agent-recommender/
-https://YOUR_GITHUB_USERNAME.github.io/pyrimid-agent-recommender/.well-known/agent.json
-https://YOUR_GITHUB_USERNAME.github.io/pyrimid-agent-recommender/.well-known/x402.json
-https://YOUR_GITHUB_USERNAME.github.io/pyrimid-agent-recommender/agents.txt
-https://YOUR_GITHUB_USERNAME.github.io/pyrimid-agent-recommender/llms.txt
+https://phucnguyen1707.github.io/pyrimid-agent-recommender/
+https://phucnguyen1707.github.io/pyrimid-agent-recommender/.well-known/agent.json
+https://phucnguyen1707.github.io/pyrimid-agent-recommender/.well-known/x402.json
+https://phucnguyen1707.github.io/pyrimid-agent-recommender/agents.txt
+https://phucnguyen1707.github.io/pyrimid-agent-recommender/llms.txt
 ```
 
 ## Step 4: Submit
@@ -83,4 +83,3 @@ MYA job #20 submission: Pyrimid Buyer-Agent Recommender
 Body:
 
 Use `submit-issue.md`.
-

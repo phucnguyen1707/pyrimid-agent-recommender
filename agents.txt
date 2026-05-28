@@ -2,9 +2,9 @@ User-agent: *
 Allow: /
 
 Agent-Service: Pyrimid Buyer-Agent Recommender
-Agent-ID: REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent
-Agent-Metadata: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/.well-known/agent.json
-X402-Metadata: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/.well-known/x402.json
+Agent-ID: phucnguyen1707-pyrimid-agent
+Agent-Metadata: https://phucnguyen1707.github.io/pyrimid-agent-recommender/.well-known/agent.json
+X402-Metadata: https://phucnguyen1707.github.io/pyrimid-agent-recommender/.well-known/x402.json
 Catalog: https://pyrimid.ai/api/v1/catalog
-Payout-Wallet-Base-USDC: REPLACE_WITH_BASE_USDC_WALLET
+Payout-Wallet-Base-USDC: 0xff82d9edf8b4b8de630ceceab4ba0be6165ab27c
 

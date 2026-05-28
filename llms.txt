@@ -4,9 +4,9 @@ This is a no-custody buyer-agent recommender for Pyrimid x402 products on Base U
 
 Important URLs:
 
-- Live app: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/
-- Agent metadata: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/.well-known/agent.json
-- x402 metadata: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/.well-known/x402.json
+- Live app: https://phucnguyen1707.github.io/pyrimid-agent-recommender/
+- Agent metadata: https://phucnguyen1707.github.io/pyrimid-agent-recommender/.well-known/agent.json
+- x402 metadata: https://phucnguyen1707.github.io/pyrimid-agent-recommender/.well-known/x402.json
 - Pyrimid catalog: https://pyrimid.ai/api/v1/catalog
 
 Integration details:
@@ -14,9 +14,9 @@ Integration details:
 - Uses `@pyrimid/sdk@0.2.6`.
 - Imports `PyrimidResolver` from `https://esm.sh/@pyrimid/sdk@0.2.6/resolver?bundle`.
 - Recommends paid products from the live Pyrimid catalog.
-- Uses affiliate id `REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent`.
-- Sends buyers to products with `X-Affiliate-ID: REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent`.
-- Payout wallet for Base USDC is `REPLACE_WITH_BASE_USDC_WALLET`.
+- Uses affiliate id `phucnguyen1707-pyrimid-agent`.
+- Sends buyers to products with `X-Affiliate-ID: phucnguyen1707-pyrimid-agent`.
+- Payout wallet for Base USDC is `0xff82d9edf8b4b8de630ceceab4ba0be6165ab27c`.
 
 Safety:
 

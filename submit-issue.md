@@ -6,20 +6,20 @@ Agent/service: **Pyrimid Buyer-Agent Recommender**
 
 Live integration proof:
 
-- Live page: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/
-- Agent metadata: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/.well-known/agent.json
-- x402 metadata: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/.well-known/x402.json
-- agents.txt: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/agents.txt
-- llms.txt: https://REPLACE_WITH_GITHUB_USERNAME.github.io/REPLACE_WITH_REPO_NAME/llms.txt
-- Source repo: https://github.com/REPLACE_WITH_GITHUB_USERNAME/REPLACE_WITH_REPO_NAME
+- Live page: https://phucnguyen1707.github.io/pyrimid-agent-recommender/
+- Agent metadata: https://phucnguyen1707.github.io/pyrimid-agent-recommender/.well-known/agent.json
+- x402 metadata: https://phucnguyen1707.github.io/pyrimid-agent-recommender/.well-known/x402.json
+- agents.txt: https://phucnguyen1707.github.io/pyrimid-agent-recommender/agents.txt
+- llms.txt: https://phucnguyen1707.github.io/pyrimid-agent-recommender/llms.txt
+- Source repo: https://github.com/phucnguyen1707/pyrimid-agent-recommender
 
 What is integrated:
 
 - Imports `PyrimidResolver` from `https://esm.sh/@pyrimid/sdk@0.2.6/resolver?bundle` in the browser.
 - Queries the live Pyrimid catalog at `https://pyrimid.ai/api/v1/catalog`.
 - Recommends products by natural-language buyer need through the live page.
-- Uses affiliate id `REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent`.
-- Shows product endpoint, network/asset, price, affiliate split, and the purchase header `X-Affiliate-ID: REPLACE_WITH_GITHUB_USERNAME-pyrimid-agent`.
+- Uses affiliate id `phucnguyen1707-pyrimid-agent`.
+- Shows product endpoint, network/asset, price, affiliate split, and the purchase header `X-Affiliate-ID: phucnguyen1707-pyrimid-agent`.
 - Exposes the Base USDC payout wallet in the page and metadata.
 
 No-spend verification:
@@ -47,7 +47,7 @@ Safety/custody:
 Payment requested if accepted:
 
 - Native USDC on Base
-- `REPLACE_WITH_BASE_USDC_WALLET`
+- `0xff82d9edf8b4b8de630ceceab4ba0be6165ab27c`
 
 If the first-five slot is no longer available, this can still stand as a public integration proof for affiliate routing and buyer-agent discovery.
 
