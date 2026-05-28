@@ -58,3 +58,4 @@ Body:
 
 Use `submit-issue.md`.
 
+For command-by-command deployment, use `DEPLOY_NOW.md`.
